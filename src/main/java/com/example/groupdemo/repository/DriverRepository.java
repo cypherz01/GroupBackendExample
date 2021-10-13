@@ -1,4 +1,4 @@
 package com.example.groupdemo.repository;
 
-public class DriverRepository {
+public interface DriverRepository {
 }
