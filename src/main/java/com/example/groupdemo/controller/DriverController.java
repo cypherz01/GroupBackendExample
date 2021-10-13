@@ -1,4 +1,4 @@
 package com.example.groupdemo.controller;
 
-public class Controller {
+public class DriverController {
 }
