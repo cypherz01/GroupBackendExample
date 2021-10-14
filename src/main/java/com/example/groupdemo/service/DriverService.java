@@ -16,4 +16,16 @@ public class DriverService {
     public Driver getDriverByID(Long id){
         return driverRepository.findById(id).get();
     }
+
+    public void deleteDriverByID(Long id){
+        driverRepository.deleteById(id);
+    }
+
+    public Driver updateDriverTelephoneNumberByID(Long id,String newTelephoneNumber){
+        Driver driver = driverRepository.findById(id).get();
+        driver.setTelephoneNumber(newTelephoneNumber);
+        return driver;
+    }
+
+
 }
