@@ -29,7 +29,7 @@ public class Driver {
     private boolean isCommercial;
     private boolean isRegisteredOutsideState;
     private int vehicleValue;
-    private Date dateRegistered;
+    private String dateRegistered;
 
     public Driver() {
     }
@@ -49,7 +49,7 @@ public class Driver {
                   boolean isCommercial,
                   boolean isRegisteredOutsideState,
                   int vehicleValue,
-                  Date dateRegistered) {
+                  String dateRegistered) {
         this.id = id;
         this.prefix = prefix;
         this.firstName = firstName;
@@ -188,11 +188,11 @@ public class Driver {
         this.vehicleValue = vehicleValue;
     }
 
-    public Date getDateRegistered() {
+    public String getDateRegistered() {
         return dateRegistered;
     }
 
-    public void setDateRegistered(Date dateRegistered) {
+    public void setDateRegistered(String dateRegistered) {
         this.dateRegistered = dateRegistered;
     }
 }
