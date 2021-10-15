@@ -24,6 +24,7 @@ public class DriverService {
     public Driver updateDriverTelephoneNumberByID(Long id,String newTelephoneNumber){
         Driver driver = driverRepository.findById(id).get();
         driver.setTelephoneNumber(newTelephoneNumber);
+        driverRepository.save(driver);
         return driver;
     }
 
