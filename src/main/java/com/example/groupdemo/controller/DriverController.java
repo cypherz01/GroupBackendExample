@@ -4,7 +4,10 @@ import com.example.groupdemo.model.Driver;
 import com.example.groupdemo.service.DriverService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class DriverController {
 
     private final DriverService service;
@@ -13,20 +16,22 @@ public class DriverController {
         this.service = service;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000/read")
+    @PostMapping("/drivers")
+    void createDriver(@RequestBody Driver driver){
+        service.createDriver(driver);
+    }
+
     @GetMapping("/drivers")
-    Driver getDriver(@RequestParam("id") Long id){
+    Optional<Driver> getDriver(@RequestParam("id") Long id){
         return service.getDriverByID(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000/read")
     @PutMapping("/drivers/update")
     Driver updateDriver(@RequestParam("id") Long id,
                         @RequestParam("newTelephoneNumber") String newTelephoneNumber){
         return service.updateDriverTelephoneNumberByID(id,newTelephoneNumber);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000/read")
     @DeleteMapping("/drivers/delete")
     void deleteDriver(@RequestParam("id") Long id){
         service.deleteDriverByID(id);

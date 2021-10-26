@@ -4,6 +4,8 @@ import com.example.groupdemo.model.Driver;
 import com.example.groupdemo.repository.DriverRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class DriverService {
 
@@ -13,8 +15,12 @@ public class DriverService {
         this.driverRepository = driverRepository;
     }
 
-    public Driver getDriverByID(Long id){
-        return driverRepository.findById(id).get();
+    public void createDriver(Driver driver){
+        driverRepository.save(driver);
+    }
+
+    public Optional<Driver> getDriverByID(Long id){
+        return driverRepository.findById(id);
     }
 
     public void deleteDriverByID(Long id){
