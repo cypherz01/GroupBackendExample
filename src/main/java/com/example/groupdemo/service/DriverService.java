@@ -4,19 +4,22 @@ import com.example.groupdemo.model.Driver;
 import com.example.groupdemo.repository.DriverRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class DriverService {
 
     private final DriverRepository driverRepository;
+    public  FactorCalculator factorCalculator = new FactorCalculator();
 
     public DriverService(DriverRepository driverRepository) {
         this.driverRepository = driverRepository;
     }
 
-    public void createDriver(Driver driver){
-        driverRepository.save(driver);
+    public Driver createDriver(Driver driver){
+        driver.setPremium(factorCalculator.calculateInsurcanceQuote(driver));
+        return driverRepository.save(driver);
     }
 
     public Optional<Driver> getDriverByID(Long id){
@@ -32,6 +35,10 @@ public class DriverService {
         driver.setTelephoneNumber(newTelephoneNumber);
         driverRepository.save(driver);
         return driver;
+    }
+
+    public List<Driver> getAll() {
+        return driverRepository.findAll();
     }
 
 

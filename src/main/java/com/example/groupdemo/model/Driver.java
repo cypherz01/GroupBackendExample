@@ -30,6 +30,7 @@ public class Driver {
     private boolean isRegisteredOutsideState;
     private int vehicleValue;
     private String dateRegistered;
+    private double premium;
 
     public Driver() {
     }
@@ -42,7 +43,7 @@ public class Driver {
                   String addressLineOne,
                   String addressLineTwo,
                   String addressCity,
-                  String addressPostcode,
+                  String addressPostCode,
                   String vehicleType,
                   int engineSize,
                   int additionalDrivers,
@@ -66,6 +67,16 @@ public class Driver {
         this.isRegisteredOutsideState = isRegisteredOutsideState;
         this.vehicleValue = vehicleValue;
         this.dateRegistered = dateRegistered;
+        this.premium = 0;
+
+    }
+
+    public double getPremium() {
+        return premium;
+    }
+
+    public void setPremium(double premium) {
+        this.premium = premium;
     }
 
     public Long getId() {

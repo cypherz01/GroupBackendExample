@@ -4,6 +4,7 @@ import com.example.groupdemo.model.Driver;
 import com.example.groupdemo.service.DriverService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -17,11 +18,16 @@ public class DriverController {
     }
 
     @PostMapping("/drivers")
-    void createDriver(@RequestBody Driver driver){
-        service.createDriver(driver);
+    Driver createDriver(@RequestBody Driver driver){
+        return service.createDriver(driver);
     }
 
     @GetMapping("/drivers")
+    List<Driver> getAll() {
+        return service.getAll();
+    }
+
+    @GetMapping("/drivers/single")
     Optional<Driver> getDriver(@RequestParam("id") Long id){
         return service.getDriverByID(id);
     }
