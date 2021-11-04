@@ -41,8 +41,8 @@ class GroupdemoApplicationTests {
     private String vehicleType = "";
     private int engineSize = 500;
     private int additionalDrivers = 1;
-    private boolean isCommericial = false;
-    private boolean isRegisteredOutsideState = false;
+    private String isCommericial = "True";
+    private String isRegisteredOutsideState = "False";
     private int vehicleValue = 4000;
     private String dateRegistered = "01/01/2021";
 

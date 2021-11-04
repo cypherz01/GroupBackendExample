@@ -73,18 +73,18 @@ public class FactorCalculator {
         return additionalDriversFactor;
     }
 
-    public double calculateCommercialUseFactor(boolean commercialUse){
+    public double calculateCommercialUseFactor(String commercialUse){
         double commercialUseFactor = 0.0;
 
-        commercialUseFactor = (commercialUse ? 1.1 : 1.0);
+        commercialUseFactor = (commercialUse.equals("True") ? 1.1 : 1.0);
 
         return commercialUseFactor;
     }
 
-    public double calculateOutsideStateUseFactor(boolean outsideStateUse){
+    public double calculateOutsideStateUseFactor(String outsideStateUse){
         double outsideStateUseFactor = 0.0;
 
-        outsideStateUseFactor = (outsideStateUse ? 1.1 : 1.0);
+        outsideStateUseFactor = (outsideStateUse.equals("True") ? 1.1 : 1.0);
 
         return outsideStateUseFactor;
     }
@@ -94,8 +94,8 @@ public class FactorCalculator {
                 calculateVehicleTypeFactor(driver.getVehicleType()) *
                         calculateEngineSizeFactor(driver.getEngineSize()) *
                         calculateAdditionalDriversFactor(driver.getAdditionalDrivers()) *
-                        calculateCommercialUseFactor(driver.isCommercial()) *
-                        calculateOutsideStateUseFactor(driver.isRegisteredOutsideState()) *
+                        calculateCommercialUseFactor(driver.getCommercial()) *
+                        calculateOutsideStateUseFactor(driver.getRegisteredOutsideState()) *
                         calculateVehicleValueFactor(driver.getVehicleValue())
         );
     }

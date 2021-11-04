@@ -26,8 +26,8 @@ public class Driver {
     private String vehicleType;
     private int engineSize;
     private int AdditionalDrivers;
-    private boolean isCommercial;
-    private boolean isRegisteredOutsideState;
+    private String Commercial;
+    private String RegisteredOutsideState;
     private int vehicleValue;
     private String dateRegistered;
     private double premium;
@@ -43,12 +43,12 @@ public class Driver {
                   String addressLineOne,
                   String addressLineTwo,
                   String addressCity,
-                  String addressPostCode,
+                  String addressPostcode,
                   String vehicleType,
                   int engineSize,
                   int additionalDrivers,
-                  boolean isCommercial,
-                  boolean isRegisteredOutsideState,
+                  String Commercial,
+                  String RegisteredOutsideState,
                   int vehicleValue,
                   String dateRegistered) {
         this.id = id;
@@ -63,8 +63,8 @@ public class Driver {
         this.vehicleType = vehicleType;
         this.engineSize = engineSize;
         AdditionalDrivers = additionalDrivers;
-        this.isCommercial = isCommercial;
-        this.isRegisteredOutsideState = isRegisteredOutsideState;
+        this.Commercial = Commercial;
+        this.RegisteredOutsideState = RegisteredOutsideState;
         this.vehicleValue = vehicleValue;
         this.dateRegistered = dateRegistered;
         this.premium = 0;
@@ -175,20 +175,20 @@ public class Driver {
         AdditionalDrivers = additionalDrivers;
     }
 
-    public boolean isCommercial() {
-        return isCommercial;
+    public String getCommercial() {
+        return Commercial;
     }
 
-    public void setCommercial(boolean commercial) {
-        isCommercial = commercial;
+    public void setCommercial(String Commercial) {
+        this.Commercial = Commercial;
     }
 
-    public boolean isRegisteredOutsideState() {
-        return isRegisteredOutsideState;
+    public String getRegisteredOutsideState() {
+        return RegisteredOutsideState;
     }
 
-    public void setRegisteredOutsideState(boolean registeredOutsideState) {
-        isRegisteredOutsideState = registeredOutsideState;
+    public void setRegisteredOutsideState(String RegisteredOutsideState) {
+        this.RegisteredOutsideState = RegisteredOutsideState;
     }
 
     public int getVehicleValue() {

@@ -58,8 +58,8 @@ class GroupDemoControllerTest {
         var carType = "BUICK";
         var engineSize = 500;
         var additionalDrivers = 1;
-        var commercialPurposes = false;
-        var outsideState = true;
+        var commercialPurposes = "True";
+        var outsideState = "True";
         var dateRegistered = "10-02-2021";
         var vehicleValue = 4000;
 
