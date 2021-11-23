@@ -1,3 +1,3 @@
-[submodule "frontend"]
-	path = frontend
+[submodule "neuadaPersonal"]
+	path = neuadaPersonal
 	url = https://github.com/cypherz01/neuadaPersonal.git
