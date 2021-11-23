@@ -2,6 +2,8 @@ package com.example.groupdemo.service;
 
 import com.example.groupdemo.model.Driver;
 
+import java.text.DecimalFormat;
+
 public class FactorCalculator {
     public double calculateVehicleTypeFactor(String vehicleType){
 
@@ -89,14 +91,18 @@ public class FactorCalculator {
         return outsideStateUseFactor;
     }
 
-    public double calculateInsurcanceQuote(Driver driver){
-        return 100 * (
+    public String calculateInsurcanceQuote(Driver driver){
+        Double calculatedPremium = 100 * (
                 calculateVehicleTypeFactor(driver.getVehicleType()) *
                         calculateEngineSizeFactor(driver.getEngineSize()) *
                         calculateAdditionalDriversFactor(driver.getAdditionalDrivers()) *
                         calculateCommercialUseFactor(driver.getCommercial()) *
                         calculateOutsideStateUseFactor(driver.getRegisteredOutsideState()) *
-                        calculateVehicleValueFactor(driver.getVehicleValue())
-        );
+                        calculateVehicleValueFactor(driver.getVehicleValue()
+        ));
+
+        DecimalFormat df = new DecimalFormat("###.00");
+        String calculatedPremiumAsString = df.format(calculatedPremium);
+        return calculatedPremiumAsString;
     }
 }

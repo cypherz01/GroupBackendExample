@@ -30,7 +30,7 @@ public class Driver {
     private String RegisteredOutsideState;
     private int vehicleValue;
     private String dateRegistered;
-    private double premium;
+    private String premium;
 
     public Driver() {
     }
@@ -67,15 +67,15 @@ public class Driver {
         this.RegisteredOutsideState = RegisteredOutsideState;
         this.vehicleValue = vehicleValue;
         this.dateRegistered = dateRegistered;
-        this.premium = 0;
+        this.premium = "";
 
     }
 
-    public double getPremium() {
+    public String getPremium() {
         return premium;
     }
 
-    public void setPremium(double premium) {
+    public void setPremium(String premium) {
         this.premium = premium;
     }
 
